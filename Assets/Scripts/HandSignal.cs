@@ -18,15 +18,6 @@ public class HandSignal : MonoBehaviour
     private float HoistActivationLimit = 0.5f; //seconds. Higher means user will need to do IsHoist action for longer before it will activate/trigger
     private float HoistExpiryLimit = 0.3f; //seconds. Higher means IsHoist will stay active for more time after user stops hoist action. 
 
-    // old IsLower parameters removed 6/12/2017
-    /*
-    private float LowerAngularVelocityThreshold = 160f; //degrees per second. Lower value = user spins hand less to trigger lower action.
-    private float LowerDownwardsAngleThreshold = 60f; //degrees. Higher value means more leniency checking if user is pointing to the ground
-    private float LowerHandDistanceThreshold = 0.10f; //metres. Lower value means user can have hand closer to body (in horizontal plane) and still trigger lower action
-    private float LowerActivationLimit = 0.5f; //seconds. Higher means user will need to do IsLower action for longer before it will activate/trigger
-    private float LowerExpiryLimit = 0.3f; //seconds. Higher means IsLower will stay active for more time after user stops lower action. 
-    */
-    
     // new IsLower parameters added 6/12/2017
     private float LowerVelocityThreshold = 0.6f; //metres per second. Lower value means user can move hand slower in vertical direction and still trigger IsLower
     private float LowerHandHeightThreshold = 0.3f;// metres. Higher value means more leniency for how high or low the user can have their hand when signalling IsLower.
@@ -43,19 +34,6 @@ public class HandSignal : MonoBehaviour
     private float SwingHandHeightThreshold = 0.3f;// metres. Higher value means more leniency for how high or low the user can have their hand when signalling swing.
     private float SwingActivationLimit = 0.4f; //seconds. Higher means user will need to do IsSwing action for longer before it will activate/trigger
     private float SwingExpiryLimit = 0.2f; //seconds. Higher means IsSwingLeft will stay active for more time after user stops swing left action. 
-
-    // old stop parameters removed 6/12/2017
-    /*
-    private float StopTimerLeftQuadrant1 = 0f;
-    private float StopTimerLeftQuadrant2 = 0f;
-    private float StopTimerLeftQuadrant3 = 0f;
-    private float StopTimerRightQuadrant1 = 0f;
-    private float StopTimerRightQuadrant2 = 0f;
-    private float StopTimerRightQuadrant3 = 0f;
-    private float StopHandDistanceThreshold = 0.5f; //metres. Higher value means user needs to swing their hand out further to trigger stop
-    private float QuadrantTimeLimit = 0.2f; //This is how quick the user must move their hand through the quadrants to signal IsStop. Higher means user can move hand slower and still trigger is stop
-    private float StopExpiryLimit = 0.7f; //seconds. This is how long the IsStop bool stays on for, after signalling a stop.
-    */
 
     private float StopHandHeightThreshold = 0.3f; //metres.Higher value means more leniency for how high or low the user can have their hand when signalling stop.
     private float StopHandDistanceThreshold = 0.45f; //metres. Higher value means user has to hold hand out further before triggering stop action. (If set too low, user can have very bent elbow, holding hand infront of face and trigger stop)
@@ -145,9 +123,6 @@ public class HandSignal : MonoBehaviour
         CheckIfSwingLeft();
         CheckIfSwingRight();
         CheckIfStop();
-
-        //this is the old check stop code, removed 6/12/2017
-        //CalculateHandAngleRelativeToHead();
     }
 
     private void CalculateAngularVelocity()
@@ -164,113 +139,6 @@ public class HandSignal : MonoBehaviour
         HandVelocity = (Controller.transform.position - HandPositionLastFrame) / Time.deltaTime;
         HandPositionLastFrame = Controller.transform.position;
     }
-
-    //this is the old check stop code, removed 6/12/2017
-    /*
-    private void CalculateHandAngleRelativeToHead()
-    {
-        //This gets a target look point which is at the crane base, but at the same height as the player's head (horizontal plane)
-        LookDirectionForCalculatingStopMotion.x = CraneBaseObject.transform.position.x;
-        LookDirectionForCalculatingStopMotion.y = GameObjectForCalculatingStopMotion.transform.position.y;
-        LookDirectionForCalculatingStopMotion.z = CraneBaseObject.transform.position.z;
-
-        //This makes the helper gameobject (locked to player's head position) face the crane (only in the horizontal plane, as look target is always at player's head height)
-        GameObjectForCalculatingStopMotion.transform.LookAt(LookDirectionForCalculatingStopMotion); 
-
-        //We then calculate the position of the hand relative to this helper gameobject.
-        HandPositionRelativeToHead = GameObjectForCalculatingStopMotion.transform.InverseTransformPoint(Controller.transform.position);
-
-        //We then use this relative position to calculate the angle between two lines. Where line one is player's head to crane, and line two is players head to controller. 
-        //I.e. when angle = 0f, then hand is directly between the head and the crane, in horizontal plane. When 90 degrees, this user is extending their hand to the right (the crane driver's left) and is independant of where the head is looking.
-        //I.e. imagine user's chest is always facing crane. This angle we're calculating is angle around the body where the hand is, relative to the forward direction of the chest. (range 0 to 360, i.e. just like compass bearings)
-        if (HandPositionRelativeToHead.x == 0 && HandPositionRelativeToHead.z == 0) { AngleOfHandRelativeToHead = 0f; }
-        else if (HandPositionRelativeToHead.x == 0 && HandPositionRelativeToHead.z > 0) { AngleOfHandRelativeToHead = 0f; }
-        else if (HandPositionRelativeToHead.x > 0 && HandPositionRelativeToHead.z == 0) { AngleOfHandRelativeToHead = 90f; }
-        else if (HandPositionRelativeToHead.x == 0 && HandPositionRelativeToHead.z < 0) { AngleOfHandRelativeToHead = 180f; }
-        else if (HandPositionRelativeToHead.x < 0 && HandPositionRelativeToHead.z == 0) { AngleOfHandRelativeToHead = 270f; }
-        else if (HandPositionRelativeToHead.x > 0 && HandPositionRelativeToHead.z > 0) { AngleOfHandRelativeToHead = 57.2958f * Mathf.Atan(HandPositionRelativeToHead.x / HandPositionRelativeToHead.z); }
-        else if (HandPositionRelativeToHead.x > 0 && HandPositionRelativeToHead.z < 0) { AngleOfHandRelativeToHead = 90f + 57.2958f * Mathf.Atan(Mathf.Abs(HandPositionRelativeToHead.z) / Mathf.Abs(HandPositionRelativeToHead.x)); }
-        else if (HandPositionRelativeToHead.x < 0 && HandPositionRelativeToHead.z < 0) { AngleOfHandRelativeToHead = 180f + 57.2958f * Mathf.Atan(Mathf.Abs(HandPositionRelativeToHead.x) / Mathf.Abs(HandPositionRelativeToHead.z)); }
-        else if (HandPositionRelativeToHead.x < 0 && HandPositionRelativeToHead.z > 0) { AngleOfHandRelativeToHead = 270f + 57.2958f * Mathf.Atan(Mathf.Abs(HandPositionRelativeToHead.z) / Mathf.Abs(HandPositionRelativeToHead.x)); }
-        else { }
-
-        StopTimerLeftQuadrant1 += Time.deltaTime;
-        StopTimerLeftQuadrant2 += Time.deltaTime;
-        StopTimerLeftQuadrant3 += Time.deltaTime;
-        StopTimerRightQuadrant1 += Time.deltaTime;
-        StopTimerRightQuadrant2 += Time.deltaTime;
-        StopTimerRightQuadrant3 += Time.deltaTime;
-
-        //left quadrant 1: 315 to 30 degrees
-        if (AngleOfHandRelativeToHead >= 315f || AngleOfHandRelativeToHead <= 30f)
-        {
-            StopTimerLeftQuadrant1 = 0f;
-        }
-
-        //left quadrant 2: 285 to 315 degrees
-        if (AngleOfHandRelativeToHead >= 285f && AngleOfHandRelativeToHead <= 315f)
-        {
-            StopTimerLeftQuadrant2 = 0f;
-        }
-
-        //left quadrant 3: 240 to 285 degrees
-        if (AngleOfHandRelativeToHead >= 240f && AngleOfHandRelativeToHead <= 285f)
-        {
-            StopTimerLeftQuadrant3 = 0f;
-        }
-
-        //right quadrant 1: 270 to 45 degrees
-        if (AngleOfHandRelativeToHead >= 270f || AngleOfHandRelativeToHead <= 45f)
-        {
-            StopTimerRightQuadrant1 = 0f;
-        }
-
-        //right quadrant 2: 45 to 75 degrees
-        if (AngleOfHandRelativeToHead >= 45f && AngleOfHandRelativeToHead <= 75f)
-        {
-            StopTimerRightQuadrant2 = 0f;
-        }
-
-        //right quadrant 3: 75 to 120 degrees
-        if (AngleOfHandRelativeToHead >= 75f && AngleOfHandRelativeToHead <= 120f)
-        {
-            StopTimerRightQuadrant3 = 0f;
-        }
-
-        if (StopCheck1 && ((StopTimerLeftQuadrant1 < QuadrantTimeLimit && StopTimerLeftQuadrant2 < QuadrantTimeLimit && StopTimerLeftQuadrant3 < QuadrantTimeLimit) || (StopTimerRightQuadrant1 < QuadrantTimeLimit && StopTimerRightQuadrant2 < QuadrantTimeLimit && StopTimerRightQuadrant3 < QuadrantTimeLimit))) 
-        {
-            StopBool = true;
-        }
-
-        HorizontalPlaneHand.x = Controller.transform.position.x;
-        HorizontalPlaneHand.y = 0f;
-        HorizontalPlaneHand.z = Controller.transform.position.z;
-
-        HorizontalPlaneHead.x = HeadObject.transform.position.x;
-        HorizontalPlaneHead.y = 0f;
-        HorizontalPlaneHead.z = HeadObject.transform.position.z;
-
-        if (Vector3.SqrMagnitude(HorizontalPlaneHand - HorizontalPlaneHead) > (StopHandDistanceThreshold * StopHandDistanceThreshold)) //Use SQR mag as more efficient/faster
-        {
-            StopCheck1 = true;
-        }
-        else
-        {
-            StopCheck1 = false;
-        }
-
-        if (StopBool == true)
-        {
-            StopExpiryTimer += Time.deltaTime;
-
-            if (StopExpiryTimer > StopExpiryLimit)
-            {
-                StopBool = false;
-                StopExpiryTimer = 0f;
-            }
-        }
-    }
-    */
 
     private void CheckIfHoist()
     {
@@ -361,97 +229,6 @@ public class HandSignal : MonoBehaviour
         }
 
     }
-
-    //This was for the first Lower gesture, which we changed 6/12/2017 to a new gesture
-
-    /*
-    private void CheckIfLower()
-    {
-        //Lower Check 1: Is angular velocity greater than threshold?
-        if (Vector3_WeaponAngularVelocity.sqrMagnitude > (LowerAngularVelocityThreshold * LowerAngularVelocityThreshold)) //Use SQR mag as more efficient/faster
-        {
-            LowerCheck1 = true;
-        }
-        else
-        {
-            LowerCheck1 = false;
-        }
-
-        //Lower Check 2: Is controller pointing towards the ground?
-        if (Vector3.Angle(Controller.transform.forward, Vector3.down) < LowerDownwardsAngleThreshold)
-        {
-            LowerCheck2 = true;
-        }
-        else
-        {
-            LowerCheck2 = false;
-        }
-
-        //Lower Check 3: is controller near head height or higher?
-        if (Controller.transform.position.y < (HeadObject.transform.position.y))
-        {
-            LowerCheck3 = true;
-        }
-        else
-        {
-            LowerCheck3 = false;
-        }
-
-        //Lower Check 4: is controller far enough away from head
-
-        HorizontalPlaneHand.x = Controller.transform.position.x;
-        HorizontalPlaneHand.y = 0f;
-        HorizontalPlaneHand.z = Controller.transform.position.z;
-
-        HorizontalPlaneHead.x = HeadObject.transform.position.x;
-        HorizontalPlaneHead.y = 0f;
-        HorizontalPlaneHead.z = HeadObject.transform.position.z;
-
-        if (Vector3.SqrMagnitude(HorizontalPlaneHand - HorizontalPlaneHead) > (LowerHandDistanceThreshold * LowerHandDistanceThreshold)) //Use SQR mag as more efficient/faster
-        {
-            LowerCheck4 = true;
-        }
-        else
-        {
-            LowerCheck4 = false;
-        }
-
-        //Check if we can set IsLower to true
-        if (LowerCheck1 && LowerCheck2 && LowerCheck3 && LowerCheck4)
-        {
-            LowerActivateTimer += 2f * Time.deltaTime;
-
-            //Checks if user has been doing action for long enough before activating/triggering
-            if (LowerActivateTimer >= LowerActivationLimit)
-            {
-                LowerBool = true; //Set IsLower to true
-                LowerExpiryTimer = 0f;
-                LowerActivateTimer = LowerActivationLimit + Time.deltaTime; //Don't let timer get too big.
-            }
-
-            if (LowerBool == true)
-            {
-                LowerActivateTimer = LowerActivationLimit + Time.deltaTime;
-            }
-        }
-        else
-        {
-            LowerActivateTimer -= Time.deltaTime;
-            LowerExpiryTimer += Time.deltaTime;
-
-            if (LowerActivateTimer < 0f)
-            {
-                LowerActivateTimer = 0f;
-            }
-        }
-
-        //Sets IsLower to false after x seconds of not satisfying lower criteria
-        if (LowerBool && LowerExpiryTimer > LowerExpiryLimit)
-        {
-            LowerBool = false;
-        }
-    }
-    */
 
     //this is the new lower gesture, created 6/12/2017
     private void CheckIfLower()
