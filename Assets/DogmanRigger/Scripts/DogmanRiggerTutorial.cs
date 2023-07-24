@@ -293,7 +293,7 @@ public class DogmanRiggerTutorial : MonoBehaviour
 
     // check proximity sensor
     //TOFIX: Compilation placeholder
-    bool proximitySensor = SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+    bool proximitySensor = true;//SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
 
     if (!hasStarted || proximitySensor || !checkProximity)
     {
