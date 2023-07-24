@@ -1,0 +1,140 @@
+fileFormatVersion: 2
+guid: ac2dc90ac140e3744aeda7a77c83925f
+timeCreated: 1502355553
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 21
+  fileIDToRecycleName:
+    100000: Hook
+    100002: Hook_end
+    100004: Mobile Crane
+    100006: Mobile_Crane
+    100008: Mobile_Crane_MeshPart0
+    100010: Mobile_Crane_MeshPart1
+    100012: Mobile_Crane_MeshPart2
+    100014: Mobile_Crane_MeshPart3
+    100016: Mobile_Crane_MeshPart4
+    100018: //RootNode
+    100020: Piston1
+    100022: Piston1_end
+    100024: Piston2
+    100026: Piston2_end
+    100028: Root
+    100030: Slew
+    100032: T1
+    100034: T2
+    100036: T3
+    100038: T4
+    100040: End
+    100042: End_end
+    400000: Hook
+    400002: Hook_end
+    400004: Mobile Crane
+    400006: Mobile_Crane
+    400008: Mobile_Crane_MeshPart0
+    400010: Mobile_Crane_MeshPart1
+    400012: Mobile_Crane_MeshPart2
+    400014: Mobile_Crane_MeshPart3
+    400016: Mobile_Crane_MeshPart4
+    400018: //RootNode
+    400020: Piston1
+    400022: Piston1_end
+    400024: Piston2
+    400026: Piston2_end
+    400028: Root
+    400030: Slew
+    400032: T1
+    400034: T2
+    400036: T3
+    400038: T4
+    400040: End
+    400042: End_end
+    4300000: Mobile_Crane_MeshPart0
+    4300002: Mobile_Crane_MeshPart1
+    4300004: Mobile_Crane_MeshPart2
+    4300006: Mobile_Crane_MeshPart3
+    4300008: Mobile_Crane_MeshPart4
+    7400000: Mobile Crane|Idle
+    7400002: Mobile Crane|Rest
+    7400004: Mobile_Crane|Idle
+    9500000: //RootNode
+    13700000: Mobile_Crane_MeshPart0
+    13700002: Mobile_Crane_MeshPart1
+    13700004: Mobile_Crane_MeshPart2
+    13700006: Mobile_Crane_MeshPart3
+    13700008: Mobile_Crane_MeshPart4
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 0
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

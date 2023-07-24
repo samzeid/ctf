@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: ba4f961bd07b6f7489058e5e05c1a8c7
+timeCreated: 1510108843
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Crane_Armature.001
+    100004: Hook
+    100006: Hook_end
+    100008: liebherr83.000
+    100010: liebherr83.000_MeshPart0
+    100012: liebherr83.000_MeshPart1
+    100014: liebherr83.000_MeshPart2
+    100016: liebherr83.001
+    100018: liebherr83.003
+    100020: Root
+    100022: Slew
+    100024: Trolley
+    100026: Base
+    100028: Crane
+    100030: liebherr17
+    100032: liebherr17_MeshPart0
+    100034: liebherr17_MeshPart1
+    100036: liebherr17_MeshPart2
+    100038: liebherr17_MeshPart3
+    100040: liebherr17_MeshPart4
+    100042: liebherr17_MeshPart5
+    100044: liebherr17_MeshPart6
+    100046: liebherr17_MeshPart7
+    100048: liebherr17_MeshPart8
+    100050: liebherr66
+    100052: liebherr71
+    100054: liebherr71_MeshPart0
+    100056: liebherr71_MeshPart1
+    100058: liebherr71_MeshPart2
+    100060: liebherr71_MeshPart3
+    100062: liebherr71_MeshPart4
+    100064: liebherr71_MeshPart5
+    100066: liebherr71_MeshPart6
+    100068: liebherr71_MeshPart7
+    100070: liebherr71_MeshPart8
+    100072: liebherr83.007
+    100074: liebherr83.004
+    100076: Hook_end_end
+    400000: //RootNode
+    400002: Crane_Armature.001
+    400004: Hook
+    400006: Hook_end
+    400008: liebherr83.000
+    400010: liebherr83.000_MeshPart0
+    400012: liebherr83.000_MeshPart1
+    400014: liebherr83.000_MeshPart2
+    400016: liebherr83.001
+    400018: liebherr83.003
+    400020: Root
+    400022: Slew
+    400024: Trolley
+    400026: Base
+    400028: Crane
+    400030: liebherr17
+    400032: liebherr17_MeshPart0
+    400034: liebherr17_MeshPart1
+    400036: liebherr17_MeshPart2
+    400038: liebherr17_MeshPart3
+    400040: liebherr17_MeshPart4
+    400042: liebherr17_MeshPart5
+    400044: liebherr17_MeshPart6
+    400046: liebherr17_MeshPart7
+    400048: liebherr17_MeshPart8
+    400050: liebherr66
+    400052: liebherr71
+    400054: liebherr71_MeshPart0
+    400056: liebherr71_MeshPart1
+    400058: liebherr71_MeshPart2
+    400060: liebherr71_MeshPart3
+    400062: liebherr71_MeshPart4
+    400064: liebherr71_MeshPart5
+    400066: liebherr71_MeshPart6
+    400068: liebherr71_MeshPart7
+    400070: liebherr71_MeshPart8
+    400072: liebherr83.007
+    400074: liebherr83.004
+    400076: Hook_end_end
+    2300000: liebherr17_MeshPart0
+    2300002: liebherr17_MeshPart1
+    2300004: liebherr17_MeshPart2
+    2300006: liebherr17_MeshPart3
+    2300008: liebherr17_MeshPart4
+    2300010: liebherr17_MeshPart5
+    2300012: liebherr17_MeshPart6
+    2300014: liebherr17_MeshPart7
+    2300016: liebherr17_MeshPart8
+    2300018: liebherr83.004
+    3300000: liebherr17_MeshPart0
+    3300002: liebherr17_MeshPart1
+    3300004: liebherr17_MeshPart2
+    3300006: liebherr17_MeshPart3
+    3300008: liebherr17_MeshPart4
+    3300010: liebherr17_MeshPart5
+    3300012: liebherr17_MeshPart6
+    3300014: liebherr17_MeshPart7
+    3300016: liebherr17_MeshPart8
+    3300018: liebherr83.004
+    4300000: liebherr83.003
+    4300002: liebherr83.001
+    4300004: liebherr83.000_MeshPart0
+    4300006: liebherr83.000_MeshPart1
+    4300008: liebherr83.000_MeshPart2
+    4300010: liebherr83.007
+    4300012: liebherr71_MeshPart0
+    4300014: liebherr71_MeshPart1
+    4300016: liebherr71_MeshPart2
+    4300018: liebherr71_MeshPart3
+    4300020: liebherr71_MeshPart4
+    4300022: liebherr71_MeshPart5
+    4300024: liebherr71_MeshPart6
+    4300026: liebherr71_MeshPart7
+    4300028: liebherr71_MeshPart8
+    4300030: liebherr66
+    4300032: liebherr17_MeshPart0
+    4300034: liebherr17_MeshPart1
+    4300036: liebherr17_MeshPart2
+    4300038: liebherr17_MeshPart3
+    4300040: liebherr17_MeshPart4
+    4300042: liebherr17_MeshPart5
+    4300044: liebherr17_MeshPart6
+    4300046: liebherr17_MeshPart7
+    4300048: liebherr17_MeshPart8
+    4300050: liebherr83.004
+    9500000: //RootNode
+    13700000: liebherr83.000_MeshPart0
+    13700002: liebherr83.000_MeshPart1
+    13700004: liebherr83.000_MeshPart2
+    13700006: liebherr83.001
+    13700008: liebherr83.003
+    13700010: liebherr66
+    13700012: liebherr71_MeshPart0
+    13700014: liebherr71_MeshPart1
+    13700016: liebherr71_MeshPart2
+    13700018: liebherr71_MeshPart3
+    13700020: liebherr71_MeshPart4
+    13700022: liebherr71_MeshPart5
+    13700024: liebherr71_MeshPart6
+    13700026: liebherr71_MeshPart7
+    13700028: liebherr71_MeshPart8
+    13700030: liebherr83.007
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrom
+    second: {fileID: 2100000, guid: a2295500ccf61524eb3ec77736f88822, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CraneCab
+    second: {fileID: 2100000, guid: f6a56f81b0d721740b0a4df898498c94, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CraneChair
+    second: {fileID: 2100000, guid: 84537f652d12c6a48980bdd5c910874e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: CraneGlass
+    second: {fileID: 2100000, guid: 326fdc1ed5db6c348a88060d8815ce07, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: f255f14b012351343b92520da90e67f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stell_
+    second: {fileID: 2100000, guid: 8166eb1063b287248a3430a65e8dabdd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stell_perf
+    second: {fileID: 2100000, guid: b8c8e604536b7ee4f9f9fd351e703aba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tros_steel
+    second: {fileID: 2100000, guid: 936aeeaddc87ba94888207def245f0fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: concrete
+    second: {fileID: 2100000, guid: 133171cc73e564c4f96bc35dcb1376bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_grey
+    second: {fileID: 2100000, guid: 49f518778f9ebdf43a57285080140527, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: paint_yellow
+    second: {fileID: 2100000, guid: 5bb47d722e5e55043aff872aec103d21, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 0
+    importBlendShapes: 1
+    importCameras: 0
+    importLights: 0
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
