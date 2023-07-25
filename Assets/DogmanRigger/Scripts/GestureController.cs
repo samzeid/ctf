@@ -93,7 +93,7 @@ public class GestureController : MonoBehaviour {
 
   void Grab()
   {
-    Debug.Log("Grab()");
+    /*Debug.Log("Grab()");
 
     // get closest grabbable object
     grabbedObject = mobileCraneController.GetClosestHookObject(transform.position);
@@ -105,12 +105,12 @@ public class GestureController : MonoBehaviour {
 
     // make the grabbed object a child of the hand controller
     grabbedObject.GetComponent<Rigidbody>().isKinematic = true;
-    grabbedObject.transform.parent = transform;
+    grabbedObject.transform.parent = transform;*/
   }
 
   void Drop()
   {
-    Debug.Log("Drop()");
+    /*Debug.Log("Drop()");
 
     // abort if nothing is grabbed
     if (grabbedObject == null)
@@ -147,6 +147,6 @@ public class GestureController : MonoBehaviour {
       grabbedObject.transform.parent = null;
       grabbedObject.GetComponent<Rigidbody>().isKinematic = false;
       grabbedObject = null;
-    }
+    }*/
   }
 }
