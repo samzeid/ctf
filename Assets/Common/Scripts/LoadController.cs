@@ -1,17 +1,24 @@
 ﻿using System.Linq;
+using ByteSprite.OpenXR;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
-public class LoadController : MonoBehaviour {
-  [SerializeField]
-  XRSocketInteractor[] socketInteractors;
+namespace Common.Scripts {
+  public class LoadController : MonoBehaviour {
+    [SerializeField]
+    FixedJointSlot[] socketInteractors;
 
-  public int GetNumRopesConnected()
-  {
-    int result = socketInteractors.Count(s => s.hasSelection);
+    public int GetNumRopesConnected()
+    {
+      int result = socketInteractors.Count(s => s.isConnected);
 
-    Debug.Log("GetNumRopesConnected() : " + result);
+      Debug.Log("GetNumRopesConnected() : " + result);
 
-    return result;
+      if (result == 4) {
+        GetComponent<Rigidbody>().isKinematic = false;
+        GetComponent<Rigidbody>().velocity = Vector3.zero;
+      }
+
+      return result;
+    }
   }
 }

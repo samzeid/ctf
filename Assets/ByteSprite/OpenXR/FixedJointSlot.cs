@@ -2,8 +2,9 @@ using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace ByteSprite.OpenXR {
-    public class FixedJointSlot : MonoBehaviour
-    {
+    public class FixedJointSlot : MonoBehaviour {
+        public bool isConnected;
+        
         [SerializeField]
         Rigidbody rigidbody;
         
@@ -11,9 +12,13 @@ namespace ByteSprite.OpenXR {
         XRSocketInteractor socketInteractor;
         
         public void SetAttached() {
-            var slottedItem = socketInteractor.GetOldestInteractableSelected().transform;
-            slottedItem.GetComponent<Collider>().enabled = false;
-            slottedItem.gameObject.AddComponent<FixedJoint>().connectedBody = rigidbody;
+            var slottedItem = socketInteractor.GetOldestInteractableSelected();
+            slottedItem.transform.gameObject.AddComponent<FixedJoint>().connectedBody = rigidbody;
+            slottedItem.transform.GetComponent<Collider>().enabled = false;
+            slottedItem.transform.GetComponent<XRGrabInteractable>().interactionLayers = InteractionLayerMask.GetMask("Disabled");
+            enabled = false;
+            socketInteractor.enabled = false;
+            isConnected = true;
         }
     }
 }
