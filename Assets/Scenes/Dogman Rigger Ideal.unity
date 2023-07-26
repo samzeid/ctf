@@ -6291,6 +6291,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExtensibleKinematic: 0
+--- !u!4 &320499254 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3935236201878430244, guid: 1b281167c68e4e64d97966989336c6d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 489617439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329577138
 GameObject:
   m_ObjectHideFlags: 0
@@ -8000,6 +8006,51 @@ PrefabInstance:
       propertyPath: m_InteractionLayers.m_Bits
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: headsetHasBeenWorn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_Id
+      value: 5e9d704a-6fb8-4df9-b588-7f9cbca1839b
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_Name
+      value: User Presence
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_ExpectedControlType
+      value: Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_SingletonActionBindings.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 35eabe80-7342-4612-be6f-6248bcf78ff3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_SingletonActionBindings.Array.data[0].m_Path
+      value: '*/{UserPresence}'
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442761126252503539, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      propertyPath: userPresenceAction.m_SingletonActionBindings.Array.data[0].m_Action
+      value: User Presence
+      objectReference: {fileID: 0}
     - target: {fileID: 7418307914493975333, guid: 1b281167c68e4e64d97966989336c6d7,
         type: 3}
       propertyPath: m_InteractionLayers.m_Bits
@@ -8010,9 +8061,14 @@ PrefabInstance:
       propertyPath: m_ModelPrefab
       value: 
       objectReference: {fileID: 1911491727}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5502183328886080679, guid: 1b281167c68e4e64d97966989336c6d7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 4761775563663463427, guid: 1b281167c68e4e64d97966989336c6d7,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1225063023}
     - targetCorrespondingSourceObject: {fileID: 3833719828180451271, guid: 1b281167c68e4e64d97966989336c6d7,
         type: 3}
       insertIndex: 0
@@ -8022,10 +8078,10 @@ PrefabInstance:
       insertIndex: 0
       addedObject: {fileID: 569248368}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8271102565844869931, guid: 1b281167c68e4e64d97966989336c6d7,
+    - targetCorrespondingSourceObject: {fileID: 2537301331321561296, guid: 1b281167c68e4e64d97966989336c6d7,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 625805164}
+      addedObject: {fileID: 1441579097}
   m_SourcePrefab: {fileID: 100100000, guid: 1b281167c68e4e64d97966989336c6d7, type: 3}
 --- !u!1 &490114747
 GameObject:
@@ -10213,25 +10269,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExtensibleKinematic: 0
---- !u!1 &625805161 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8271102565844869931, guid: 1b281167c68e4e64d97966989336c6d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 489617439}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &625805164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 625805161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4f39162cd1b3bf4cb1d38fb9134970f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 1057131208}
 --- !u!1 &629292397
 GameObject:
   m_ObjectHideFlags: 0
@@ -23841,12 +23878,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExtensibleKinematic: 0
---- !u!4 &1057131208 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3935236201878430244, guid: 1b281167c68e4e64d97966989336c6d7,
-    type: 3}
-  m_PrefabInstance: {fileID: 489617439}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1057806440 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114955783536088822, guid: 98eb08a8ed62bc64db7568969cd37388,
@@ -26923,6 +26954,37 @@ Transform:
   - {fileID: 1952010648}
   m_Father: {fileID: 1363822529}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1225063022
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1225063023}
+  m_Layer: 0
+  m_Name: PlayerResetPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1225063023
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225063022}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.36144, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1441579096}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1225558795
 GameObject:
@@ -30815,6 +30877,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ExtensibleKinematic: 0
+--- !u!1 &1441579095 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2537301331321561296, guid: 1b281167c68e4e64d97966989336c6d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 489617439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1441579096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4761775563663463427, guid: 1b281167c68e4e64d97966989336c6d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 489617439}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1441579097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1441579095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4f39162cd1b3bf4cb1d38fb9134970f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 320499254}
+  playerCamera: {fileID: 2146823836}
+  resetPosition: {fileID: 1225063023}
 --- !u!1 &1442629682
 GameObject:
   m_ObjectHideFlags: 0
@@ -42011,6 +42100,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135002345}
   m_CullTransparentMesh: 1
+--- !u!4 &2146823836 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8786637866625950510, guid: 1b281167c68e4e64d97966989336c6d7,
+    type: 3}
+  m_PrefabInstance: {fileID: 489617439}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2146899499
 GameObject:
   m_ObjectHideFlags: 0

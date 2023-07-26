@@ -1,11 +1,9 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class HeadsetDetectTest : MonoBehaviour
 {
-    void Update() {
-        Debug.Log("Headset is worn: " + ByteSprite.VR.IsHeadsetWorn());
-    }
-    /*public InputAction userPresenceAction;
+    public InputAction userPresenceAction;
     
     void Start() {
         userPresenceAction.started += ctx => Debug.Log("Headset is worn");
@@ -18,5 +16,5 @@ public class HeadsetDetectTest : MonoBehaviour
     
     void OnDisable() {
         userPresenceAction.Disable();
-    }*/
+    }
 }

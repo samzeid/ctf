@@ -152,6 +152,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a69138cece75e0d4e95178968c0189ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  userPresenceAction:
+    m_Name: User Presence
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: d713905c-1bae-438d-bf0c-e565fd519511
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 7f564fe0-b9f0-44de-abe8-c2ecb22e4437
+      m_Path: '*/{UserPresence}'
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: User Presence
+      m_Flags: 0
+    m_Flags: 0
 --- !u!4 &37843593
 Transform:
   m_ObjectHideFlags: 0
@@ -197,6 +214,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee63b51b51c57314189800967c9e9178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headsetHasBeenWorn: 0
+  userPresenceAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
 --- !u!1 &486167619
 GameObject:
   m_ObjectHideFlags: 0
