@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Experiments/WorkingExcavator.unity
     guid: 297e5fb68b1f7684586069f055378dfc
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Dogman Rigger Ideal.unity
     guid: b5ceb3ef30848fe40b5407622f77545a
-  - enabled: 1
+  - enabled: 0
     path: Assets/CraneDriver/CraneOperatorTaller.unity
     guid: 0d800849ac4f143708798eebe4524ebd
   - enabled: 0

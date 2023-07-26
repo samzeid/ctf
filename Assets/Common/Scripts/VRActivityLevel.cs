@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
 using Valve.VR;
@@ -36,3 +36,4 @@ public class VRActivityLevel : MonoBehaviour {
     }
   }
 }
+*/

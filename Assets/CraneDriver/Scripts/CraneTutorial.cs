@@ -65,7 +65,7 @@ public class CraneTutorial : MonoBehaviour
   private AudioSource audioSource;
 
   //TOFIX: Compilation placeholder
-  private SteamVR_Input_Sources headset;
+  private VRInputSource headset;
 
   private bool hasStarted;
 
@@ -75,7 +75,7 @@ public class CraneTutorial : MonoBehaviour
     Debug.Assert(dialogue[0] == null);
 
     //TOFIX: Compilation placeholder
-    headset = SteamVR_Input_Sources.LeftHand; //SteamVR_Controller.Input(0);
+    headset = VRInputSource.LeftHand; //SteamVR_Controller.Input(0);
 
     audioSource = GetComponent<AudioSource>();
 
@@ -329,7 +329,7 @@ public class CraneTutorial : MonoBehaviour
     }
 
     //TOFIX: Compilation placeholder
-    bool proximitySensor = SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+    bool proximitySensor = SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(VRInputSource.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
 
     if (!hasStarted || proximitySensor || !checkProximity)
     {

@@ -15,7 +15,7 @@ public class VR360VideoManager : MonoBehaviour {
   private int videoIndex = 0;
 
   //TOFIX: Compilation placeholder
-  private SteamVR_Input_Sources headset;
+  private VRInputSource headset;
 
   private bool playing;
   private float lastProximityTime = 0;
@@ -24,7 +24,7 @@ public class VR360VideoManager : MonoBehaviour {
   // Use this for initialization
   void Start () {
     //TOFIX: Compilation placeholder
-    headset = SteamVR_Input_Sources.Head;
+    headset = VRInputSource.Head;
 
     FindVideos();
 
@@ -78,7 +78,7 @@ public class VR360VideoManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
     //TOFIX: Compilation placeholder
-    bool proximitySensor = SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+    bool proximitySensor = SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(VRInputSource.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
 
     if (proximitySensor)
     {

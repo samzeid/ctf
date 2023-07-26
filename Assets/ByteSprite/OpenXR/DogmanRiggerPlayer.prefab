@@ -757,7 +757,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_CameraFloorOffsetObject: {fileID: 4897566533863509438}
   m_RequestedTrackingMode: 0
-  m_TrackingOriginMode: 1
+  m_TrackingOriginMode: 2
   m_TrackingSpace: 0
   m_CameraYOffset: 1.36144
 --- !u!1 &8764818284906479948
@@ -1138,6 +1138,7 @@ GameObject:
   - component: {fileID: 6118080705291486627}
   - component: {fileID: 2321220550341843575}
   - component: {fileID: 3755903776879706596}
+  - component: {fileID: 6442761126252503539}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1237,3 +1238,15 @@ MonoBehaviour:
   m_TrackingType: 0
   m_UpdateType: 0
   m_UseRelativeTransform: 0
+--- !u!114 &6442761126252503539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8933076181584456529}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee63b51b51c57314189800967c9e9178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

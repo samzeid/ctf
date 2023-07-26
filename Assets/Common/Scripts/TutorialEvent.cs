@@ -4,6 +4,7 @@ using Common.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR;
 using Valve.VR;
 
 public abstract class TutorialEvent
@@ -998,10 +999,10 @@ public class TutorialTriggerHelpEvent : TutorialEvent
 public class TutorialVRHeadsetOnEvent : TutorialEvent
 {
   //TOFIX: Compilation placeholder
-  SteamVR_Input_Sources headset;
+  VRInputSource headset;
   
   //TOFIX: Compilation placeholder
-  public TutorialVRHeadsetOnEvent(SteamVR_Input_Sources headset)
+  public TutorialVRHeadsetOnEvent(VRInputSource headset)
   {
     this.headset = headset;
   }
@@ -1016,7 +1017,7 @@ public class TutorialVRHeadsetOnEvent : TutorialEvent
   public override bool IsComplete(GameObject manager)
   {
     //TOFIX: Compilation placeholder
-    bool proximitySensor = true;//SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+    bool proximitySensor = ByteSprite.VR.IsHeadsetWorn();//SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
 
     return proximitySensor || Input.GetKey(KeyCode.P);
   }

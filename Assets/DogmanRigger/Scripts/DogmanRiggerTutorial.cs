@@ -4,6 +4,7 @@ using Common.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.XR.OpenXR.Input;
 using Valve.VR;
 
 [RequireComponent(typeof(AudioSource))]
@@ -54,8 +55,7 @@ public class DogmanRiggerTutorial : MonoBehaviour
   private AudioSource audioSource;
 
   //TOFIX: Compilation placeholder
-  private SteamVR_Input_Sources headset;
-
+  private VRInputSource headset;
   private bool hasStarted;
 
   // Use this for initialization
@@ -64,7 +64,7 @@ public class DogmanRiggerTutorial : MonoBehaviour
     Debug.Assert(dialogue[0] == null);
     
     //TOFIX: Compilation placeholder
-    headset = SteamVR_Input_Sources.Head;
+    headset = VRInputSource.Head;
     
     tutorialManager = new TutorialManager();
     audioSource = GetComponent<AudioSource>();
@@ -294,7 +294,8 @@ public class DogmanRiggerTutorial : MonoBehaviour
 
     // check proximity sensor
     //TOFIX: Compilation placeholder
-    bool proximitySensor = true;//SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+
+    bool proximitySensor = ByteSprite.VR.IsHeadsetWorn();//SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(VRInputSource.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
 
     if (!hasStarted || proximitySensor || !checkProximity)
     {
