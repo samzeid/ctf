@@ -1250,3 +1250,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee63b51b51c57314189800967c9e9178, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  headsetHasBeenWorn: 0
+  userPresenceAction:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+    m_Flags: 0
