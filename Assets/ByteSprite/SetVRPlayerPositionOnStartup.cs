@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class SetVRPlayerPositionOnStartup : MonoBehaviour {
     [SerializeField]
@@ -34,7 +33,7 @@ public class SetVRPlayerPositionOnStartup : MonoBehaviour {
     
     [ContextMenu("ResetPosition")]
     public void ResetPlayerPosition() {
-        var rotationY = resetPosition.rotation.eulerAngles.y - playerCamera.rotation.eulerAngles.y;
+        float rotationY = resetPosition.rotation.eulerAngles.y - playerCamera.rotation.eulerAngles.y;
         player.rotation = Quaternion.Euler(0, rotationY, 0);
         
         var distance = resetPosition.position - playerCamera.position;
