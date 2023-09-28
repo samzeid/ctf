@@ -4,11 +4,11 @@ using Common.Scripts;
 using UnityEngine;
 using Valve.VR;
 
+// WARNING: This script is not used in the current version of the project.
+
 public class GestureController : MonoBehaviour {
 
   private SteamVR_TrackedObject trackedObject;
-  //TOFIX: Compilation placeholder
-  private VRInputSource device;
 
   private string currentGesture;
 
@@ -29,27 +29,24 @@ public class GestureController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-    //TOFIX: Compilation placeholder
-    device = VRInputSource.Any; //SteamVR_Controller.Input((int)trackedObject.index);
-
     // send analog input from trigger button to the hand animator
     //TOFIX: Compilation placeholder
-    float triggerInput = SteamVR_Input.GetVector2("TriggerInput", VRInputSource.Any).x;//device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x;
-    handAnimator.SetFloat("Closed", triggerInput);
+    //float triggerInput = SteamVR_Input.GetVector2("TriggerInput", VRInputSource.Any).x;//device.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Trigger).x;
+    //handAnimator.SetFloat("Closed", triggerInput);
 
     //TOFIX: Compilation placeholder
     //This should be changed to Steam 2.0 action inputs
-    if (SteamVR_Input.GetBooleanAction("TriggerPull").GetStateDown(VRInputSource.Any))
-    {
-      Grab();
-    }
+    //if (SteamVR_Input.GetBooleanAction("TriggerPull").GetStateDown(VRInputSource.Any))
+    //{
+    //  Grab();
+    //}
 
     //TOFIX: Compilation placeholder
     //This should be changed to Steam 2.0 action inputs
-    if (SteamVR_Input.GetBooleanAction("TriggerPull").GetStateUp(VRInputSource.Any))
-    {
-      Drop();
-    }
+    //if (SteamVR_Input.GetBooleanAction("TriggerPull").GetStateUp(VRInputSource.Any))
+    //{
+    //  Drop();
+    //}
 
     // check for hand signals and send info to handAnimator
     if (handSignal.CheckHoist)

@@ -2,13 +2,13 @@
   "source": "Unity",
   "applications": [
     {
-      "app_key": "application.generated.unity.ctf0317excavator.exe",
+      "app_key": "application.generated.unity.dogmanrigger.exe",
       "launch_type": "url",
       "url": "steam://launch/",
       "action_manifest_path": "C:\\Users\\Sam\\Documents\\ctf\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
-          "name": "CTF0317 Excavator [Testing]"
+          "name": "Dogman Rigger [Testing]"
         }
       }
     }

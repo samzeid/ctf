@@ -54,18 +54,13 @@ public class DogmanRiggerTutorial : MonoBehaviour
   private TutorialManager tutorialManager;
   private AudioSource audioSource;
 
-  //TOFIX: Compilation placeholder
-  private VRInputSource headset;
   private bool hasStarted;
 
   // Use this for initialization
   void Start()
   {
     Debug.Assert(dialogue[0] == null);
-    
-    //TOFIX: Compilation placeholder
-    headset = VRInputSource.Head;
-    
+
     tutorialManager = new TutorialManager();
     audioSource = GetComponent<AudioSource>();
 
@@ -96,7 +91,7 @@ public class DogmanRiggerTutorial : MonoBehaviour
     tutorialManager.AddEvent(new TutorialShowGUIEvent(startUI));
     //tutorialManager.AddEvent(new TutorialWaitForButtonDownEvent("Fire1"));
     //tutorialManager.AddEvent(new TutorialWaitForFunctionTrueEvent(mobileCraneController.GetThumbpadStop));
-    tutorialManager.AddEvent(new TutorialVRHeadsetOnEvent(headset));
+    tutorialManager.AddEvent(new TutorialVRHeadsetOnEvent());
     tutorialManager.AddEvent(new TutorialHideGUIEvent(splashUI));
     tutorialManager.AddEvent(new TutorialCallFunctionWithBoolValueEvent(SetHasStarted, true));
     tutorialManager.AddEvent(new TutorialHideGUIEvent(startUI));

@@ -998,13 +998,10 @@ public class TutorialTriggerHelpEvent : TutorialEvent
 
 public class TutorialVRHeadsetOnEvent : TutorialEvent
 {
-  //TOFIX: Compilation placeholder
-  VRInputSource headset;
   
   //TOFIX: Compilation placeholder
-  public TutorialVRHeadsetOnEvent(VRInputSource headset)
+  public TutorialVRHeadsetOnEvent()
   {
-    this.headset = headset;
   }
 
   public override void Begin(GameObject manager)
@@ -1017,7 +1014,7 @@ public class TutorialVRHeadsetOnEvent : TutorialEvent
   public override bool IsComplete(GameObject manager)
   {
     //TOFIX: Compilation placeholder
-    bool proximitySensor = ByteSprite.VR.IsHeadsetWorn();//SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(SteamVR_Input_Sources.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+    bool proximitySensor = ByteSprite.VR.IsHeadsetWorn();
 
     return proximitySensor || Input.GetKey(KeyCode.P);
   }

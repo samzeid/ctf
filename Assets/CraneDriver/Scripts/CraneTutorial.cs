@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using Common.Scripts;
+﻿using Common.Scripts;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -64,18 +62,12 @@ public class CraneTutorial : MonoBehaviour
   private TutorialManager tutorialManager = new TutorialManager();
   private AudioSource audioSource;
 
-  //TOFIX: Compilation placeholder
-  private VRInputSource headset;
-
   private bool hasStarted;
 
   // Use this for initialization
   void Start()
   {
     Debug.Assert(dialogue[0] == null);
-
-    //TOFIX: Compilation placeholder
-    headset = VRInputSource.LeftHand; //SteamVR_Controller.Input(0);
 
     audioSource = GetComponent<AudioSource>();
 
@@ -114,7 +106,7 @@ public class CraneTutorial : MonoBehaviour
     // wait for the start button
     //tutorialManager.AddEvent(new TutorialShowGUIEvent(startUI));
     //tutorialManager.AddEvent(new TutorialWaitForButtonDownEvent("Fire1"));
-    tutorialManager.AddEvent(new TutorialVRHeadsetOnEvent(headset));
+    tutorialManager.AddEvent(new TutorialVRHeadsetOnEvent());
         tutorialManager.AddEvent(new TutorialHideGUIEvent(splashUI));
         tutorialManager.AddEvent(new TutorialCallFunctionWithBoolValueEvent(SetHasStarted, true));
         tutorialManager.AddEvent(new TutorialWaitForSecondsEvent(1.5f));
@@ -329,7 +321,7 @@ public class CraneTutorial : MonoBehaviour
     }
 
     //TOFIX: Compilation placeholder
-    bool proximitySensor = SteamVR_Input.GetBooleanAction("HeadsetOnHead").GetStateDown(VRInputSource.Head); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
+    bool proximitySensor = ByteSprite.VR.IsHeadsetWorn(); //headset.GetPress(Valve.VR.EVRButtonId.k_EButton_ProximitySensor);
 
     if (!hasStarted || proximitySensor || !checkProximity)
     {
