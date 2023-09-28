@@ -14,12 +14,15 @@ public class HeadsetDetectionVive : MonoBehaviour {
         
         bool isHeadsetOnHead = headsetOnHead.GetState(SteamVR_Input_Sources.Head);
 
-        if (isHeadsetOnHead)
+        if (isHeadsetOnHead) {
             wasWorn = true;
-        else
+            wasRemovedFromHead = 0;
+        }
+        else {
             wasRemovedFromHead += Time.deltaTime;
+        }
 
-        if (wasWorn && wasRemovedFromHead > 2f) {
+        if (wasWorn && wasRemovedFromHead > 3f) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             isLoading = true;
         }
