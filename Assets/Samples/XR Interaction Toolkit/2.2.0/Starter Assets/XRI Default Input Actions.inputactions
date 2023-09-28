@@ -1581,6 +1581,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "XRI CommonUsages",
+            "id": "76e8b411-2590-47e4-9d2e-1826e9295448",
+            "actions": [
+                {
+                    "name": "UserPresence",
+                    "type": "Button",
+                    "id": "fea0e2ce-6026-42b8-8bda-2305ced21376",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "5e7f2148-4538-4582-8bcc-5b2ed6469a7b",
+                    "path": "*/{UserPresence}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UserPresence",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": [
