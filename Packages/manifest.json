@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "com.htc.upm.vive.openxr": "https://github.com/ViveSoftware/VIVE-OpenXR.git?path=com.htc.upm.vive.openxr",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.2d.tilemap": "1.0.0",
     "com.unity.ai.navigation": "1.1.1",
@@ -17,7 +16,6 @@
     "com.unity.xr.interaction.toolkit": "2.2.0",
     "com.unity.xr.management": "4.4.0",
     "com.unity.xr.openxr": "1.7.0",
-    "com.valvesoftware.unity.openvr": "file:../Assets/SteamVR/OpenVRUnityXRPackage/Editor/com.valvesoftware.unity.openvr-1.1.4.tgz",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
