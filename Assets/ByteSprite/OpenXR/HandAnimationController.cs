@@ -35,7 +35,7 @@ namespace ByteSprite.OpenXR {
         [SerializeField]
         FixedJoint joint;
 
-        void Update() {
+        void FixedUpdate() {
             var inputSource = (hand == Hand.Left) ? SteamVR_Input_Sources.LeftHand : SteamVR_Input_Sources.RightHand;
             // get squeeze value from the correct hand directly for steam 2.0
             float squeeze = triggerInput.GetAxis(inputSource);
@@ -51,12 +51,16 @@ namespace ByteSprite.OpenXR {
 
             if (joint.connectedBody != null) {
                 joint.connectedBody.transform.position = joint.transform.position;
-            }
 
-            if (triggerValue < 0.9f) {
-                joint.connectedBody.GetComponent<Collider>().enabled = true;
-                joint.connectedBody.isKinematic = false;
-                joint.connectedBody = null;
+                if (triggerValue < 0.9f) {
+                    joint.connectedBody.GetComponent<Collider>().enabled = true;
+                    joint.connectedBody.isKinematic = false;
+                    joint.connectedBody = null;
+                }
+                else {
+                    joint.connectedBody.GetComponent<Collider>().enabled = false;
+                    joint.connectedBody.isKinematic = true;
+                }
             }
         }
 
