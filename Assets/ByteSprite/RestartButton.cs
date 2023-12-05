@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace ByteSprite {
     public class RestartButton : MonoBehaviour {
@@ -8,11 +9,22 @@ namespace ByteSprite {
             if (Input.GetButtonDown(RestartButtonString)) {
                 ResetScene();
             }
+            
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SceneManager.LoadScene("Main");
+            }
         }
 
         public void ResetScene() {
-            Debug.Log("Restart scene");
+            Debug.Log("_LM Restart scene");
             UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex);        
+        }
+
+        public void LoadMainMenu()
+        {
+            print("_LM LoadingMainMenu");
+            UnityEngine.SceneManagement.SceneManager.LoadScene("Main");
         }
     }
 }
