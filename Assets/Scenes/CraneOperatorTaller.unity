@@ -8981,6 +8981,7 @@ GameObject:
   - component: {fileID: 857887621}
   - component: {fileID: 857887617}
   - component: {fileID: 857887618}
+  - component: {fileID: 857887622}
   m_Layer: 0
   m_Name: CO_Crane (1)
   m_TagString: Untagged
@@ -9061,6 +9062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf6c844242cc2d4a97bc987050e547b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usingQuest: 1
   playerId: 0
   slew: {fileID: 1283229241}
   trolley: {fileID: 650348630}
@@ -9361,6 +9363,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &857887622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 857887614}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55871aa7468e7f14c8abbfa83121694b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  usingQuest: 1
 --- !u!1 &861074027 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100016, guid: c82fb342545f9ff4699e703c203f83b6,
@@ -15637,7 +15652,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1546109206
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16958,7 +16973,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1690803201
 RectTransform:
   m_ObjectHideFlags: 0

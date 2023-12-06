@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Rewired;
 using System;
+using System.Runtime.InteropServices;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.UIElements.Experimental;
+using UnityEngine.XR;
+
 
 public class CraneController : MachineController
 {
@@ -14,6 +19,10 @@ public class CraneController : MachineController
     RightJoystick,
     All,
   }
+
+  public bool usingQuest;
+  private InputData inputData;
+  
 
   public int playerId;
   private Player player;
@@ -76,9 +85,14 @@ public class CraneController : MachineController
 
   private ControlMask controlMask = ControlMask.All;
 
+  
+
   // Use this for initialization
   void Start()
   {
+    if (usingQuest)
+      inputData = GetComponent<InputData>();
+    
     player = ReInput.players.GetPlayer(playerId);
 
     Reset();
@@ -87,6 +101,7 @@ public class CraneController : MachineController
   // Update is called once per frame
   void Update()
   {
+
     old_hook_position = hook_position;
 
     joystick1Horz = player.GetAxis("Joystick 1 Horz");
@@ -123,6 +138,7 @@ public class CraneController : MachineController
       up2 = false;
     }
     */
+    
 
     if (GetMovementEnabled())
     {
@@ -206,6 +222,63 @@ public class CraneController : MachineController
         joystick2Vert = -1;
       }
 
+      if (usingQuest)
+      {
+        if (inputData.leftController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 leftThumbstick));
+        {
+          if (leftThumbstick.x < -0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.LeftJoystick))
+          {
+            slew_rotation_y -= SLEW_RATE * Time.deltaTime;
+            joy1Left = true;
+            joystick1Horz = -1;
+          }
+          if (leftThumbstick.x > 0.5f  && (controlMask == ControlMask.All || controlMask == ControlMask.LeftJoystick))
+          {
+            slew_rotation_y += SLEW_RATE * Time.deltaTime;
+            joy1Right = true;
+            joystick1Horz = 1;
+          }
+          if (leftThumbstick.y < -0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.LeftJoystick))
+          {
+            trolley_position_z -= TROLLEY_RATE * Time.deltaTime;
+            joy1Down = true;
+            joystick1Vert = -1;
+          }
+          if (leftThumbstick.y > 0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.LeftJoystick))
+          {
+            trolley_position_z += TROLLEY_RATE * Time.deltaTime;
+            joy1Up = true;
+            joystick1Vert = 1;
+          }
+        }
+        
+        if (inputData.rightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out Vector2 rightThumbstick));
+        {
+          if (rightThumbstick.x < -0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.RightJoystick))
+          {
+            joy2Left = true;
+            joystick2Horz = -1;
+          }
+          if (rightThumbstick.x > 0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.RightJoystick))
+          {
+            joy2Right = true;
+            joystick2Horz = 1;
+          }
+          if (rightThumbstick.y > 0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.RightJoystick))
+          {
+            hook_position -= HOOK_RATE * Time.deltaTime;
+            joy2Up = true;
+            joystick2Vert = 1;
+          }
+          if (rightThumbstick.y < -0.5f && (controlMask == ControlMask.All || controlMask == ControlMask.RightJoystick))
+          {
+            hook_position += HOOK_RATE * Time.deltaTime;
+            joy2Down = true;
+            joystick2Vert = -1;
+          }
+        }
+      }
+
       // clamp values to physical bounds
       trolley_position_z = Mathf.Clamp(trolley_position_z, MIN_TROLLEY_POSITION, MAX_TROLLEY_POSITION);
       hook_position = Mathf.Clamp(hook_position, MIN_HOOK_POSITION, MAX_HOOK_POSITION);
@@ -237,6 +310,11 @@ public class CraneController : MachineController
 
   }
 
+  #region Quest-Specific Code
+  
+  
+  #endregion
+  
   public override bool IsMoving()
   {
     return GetMovementEnabled() && HasAnyInput();

@@ -29,11 +29,13 @@ namespace ByteSprite
 
         public GameObject root;
 
+        public Transform targetCricle;
+        
         public enum buttonState { reload, mainMenu}
 
         public buttonState currentButtonState;
 
-        private void Start()
+       private void Start()
         {
             root.SetActive(false);
             Invoke("EnableAfterDelay", 2f);
@@ -72,13 +74,11 @@ namespace ByteSprite
                    
                 }
             }
-            else if(criticalLookValue > 0)
+            else if (criticalLookValue > 0)
             {
                 criticalLookValue = 0;
                 imageFillAmount.fillAmount = criticalLookValue;
             }
-            
-            
         }
     
         private bool IsCameraLookingAt()
