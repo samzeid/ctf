@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/Experiments/WorkingExcavator.unity
     guid: 297e5fb68b1f7684586069f055378dfc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Dogman Rigger Ideal.unity
     guid: b5ceb3ef30848fe40b5407622f77545a
-  - enabled: 0
+  - enabled: 1
     path: Assets/CraneDriver/CraneOperatorTaller.unity
     guid: 0d800849ac4f143708798eebe4524ebd
   - enabled: 0
@@ -22,5 +22,5 @@ EditorBuildSettings:
       type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: a01820eafb1916e4295790b7fca0b3c9,
       type: 2}
-    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 902740107a750424fb7f404996de104e,
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 80fc71f92de7d3844b17332bafda68a6,
       type: 2}
