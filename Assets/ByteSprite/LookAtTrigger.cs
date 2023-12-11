@@ -1,3 +1,4 @@
+using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -79,6 +80,22 @@ namespace ByteSprite
                 criticalLookValue = 0;
                 imageFillAmount.fillAmount = criticalLookValue;
             }
+#if UNITY_EDITOR //DEBUG: Remove before build
+            else if (Input.GetKeyDown(KeyCode.Space))
+            {
+                switch (currentButtonState)
+                {
+                    case buttonState.reload:
+                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
+                        break;
+                        
+                    case buttonState.mainMenu:
+                        SceneManager.LoadScene("Main");
+                        break;
+                }
+            }
+#endif //END debug
+            
         }
     
         private bool IsCameraLookingAt()

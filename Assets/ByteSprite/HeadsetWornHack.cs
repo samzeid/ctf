@@ -8,7 +8,7 @@ namespace ByteSprite {
         public bool headsetHasBeenWorn = false;
 
         public InputAction userPresenceAction;
-    
+
         void OnEnable() {
             userPresenceAction.Enable();
             userPresenceAction.started += OnHeadsetWorn;
