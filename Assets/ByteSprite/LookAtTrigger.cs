@@ -1,4 +1,6 @@
+using System;
 using System.ComponentModel;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -10,6 +12,10 @@ namespace ByteSprite
         [SerializeField]
         private Transform playerCamera;
 
+        [SerializeField] TMP_Text text;
+
+        [SerializeField] TMP_Text lookingAtText;
+        
         [SerializeField]
         private float triggerDistance = 100f;
 
@@ -38,8 +44,9 @@ namespace ByteSprite
 
        private void Start()
         {
-            root.SetActive(false);
-            Invoke("EnableAfterDelay", 2f);
+            lookingAtText.gameObject.SetActive(false);
+            //root.SetActive(false);
+            //Invoke("EnableAfterDelay", 0.1f);
         }
 
         void EnableAfterDelay()
@@ -51,7 +58,6 @@ namespace ByteSprite
         // Update is called once per frame
         void Update()
         {
-            
             // Check if the camera is looking at the object
             if (IsCameraLookingAt())
             {
@@ -59,6 +65,15 @@ namespace ByteSprite
                 {
                     criticalLookValue += increaseOverTime * Time.deltaTime;
                     imageFillAmount.fillAmount = criticalLookValue;
+                    if (currentButtonState == buttonState.reload) {
+                        text.text = "Restarting...";
+                        lookingAtText.gameObject.SetActive(true);
+                    }
+                    else if (currentButtonState == buttonState.mainMenu) {
+                        text.text = "Loading...";
+                        lookingAtText.gameObject.SetActive(true);
+                    }
+
                 }
                 else
                 {
@@ -77,24 +92,19 @@ namespace ByteSprite
             }
             else if (criticalLookValue > 0)
             {
-                criticalLookValue = 0;
+                if (currentButtonState == buttonState.reload) {
+                    text.text = "Restart";
+                    lookingAtText.gameObject.SetActive(false);
+                }
+                else if (currentButtonState == buttonState.mainMenu) {
+                    text.text = "Main Menu";
+                    lookingAtText.gameObject.SetActive(false);
+                }
+
+                criticalLookValue = Mathf.Clamp01(criticalLookValue - increaseOverTime * Time.deltaTime * 2.0f);
                 imageFillAmount.fillAmount = criticalLookValue;
             }
-#if UNITY_EDITOR //DEBUG: Remove before build
-            else if (Input.GetKeyDown(KeyCode.Space))
-            {
-                switch (currentButtonState)
-                {
-                    case buttonState.reload:
-                        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
-                        break;
-                        
-                    case buttonState.mainMenu:
-                        SceneManager.LoadScene("Main");
-                        break;
-                }
-            }
-#endif //END debug
+
             
         }
     
@@ -113,6 +123,10 @@ namespace ByteSprite
             }
 
             return false;
+        }
+
+        public void Restart() {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex); 
         }
 
     }

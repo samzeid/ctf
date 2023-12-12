@@ -6358,10 +6358,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MenuTooltip
       objectReference: {fileID: 0}
+    - target: {fileID: 1409392268724590, guid: bbad0b56b62bcd44dabefe38501d7dff, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114707525488462792, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
       propertyPath: m_text
-      value: Dogman
+      value: 'Dogman '
       objectReference: {fileID: 0}
     - target: {fileID: 114707525488462792, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
@@ -6407,6 +6411,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.characterCount
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224100642748169446, guid: bbad0b56b62bcd44dabefe38501d7dff,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224244821583781676, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
@@ -6456,17 +6465,17 @@ PrefabInstance:
     - target: {fileID: 224244821583781676, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224244821583781676, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224244821583781676, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224244821583781676, guid: bbad0b56b62bcd44dabefe38501d7dff,
         type: 3}
@@ -13412,6 +13421,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1957347380230479558, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3921269952697117840, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
         type: 3}
       propertyPath: m_RootOrder
@@ -13502,6 +13516,31 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 26.969
       objectReference: {fileID: 0}
+    - target: {fileID: 5070906777388262185, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070906777388262185, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070906777388262185, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070906777388262185, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5070906777388262185, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7423685882897369100, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
         type: 3}
       propertyPath: m_SizeDelta.x
@@ -13527,6 +13566,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7423685882897369100, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144100270087538091, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8144100270087538091, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 206a6458eee9c6f43b3c0943ad00d498,
+        type: 3}
     - target: {fileID: 8743691558542455511, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
         type: 3}
       propertyPath: m_text
@@ -13534,7 +13589,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8050438201565435242, guid: 076c3f62cb0bf5446a9827b2f79f0deb, type: 3}
-    m_RemovedGameObjects: []
+    - {fileID: 1461444311563850200, guid: 076c3f62cb0bf5446a9827b2f79f0deb, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 2305539388011858513, guid: 076c3f62cb0bf5446a9827b2f79f0deb, type: 3}
+    - {fileID: 579241352179042132, guid: 076c3f62cb0bf5446a9827b2f79f0deb, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7421992860992118643, guid: 076c3f62cb0bf5446a9827b2f79f0deb,
@@ -18716,6 +18774,11 @@ PrefabInstance:
         type: 3}
       propertyPath: sceneName
       value: CraneOperatorTaller
+      objectReference: {fileID: 0}
+    - target: {fileID: 199611906621106012, guid: 119419766abb0a54a8ee5bf67d3cfa68,
+        type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
