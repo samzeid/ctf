@@ -300,8 +300,8 @@ public class DogmanRiggerTutorial : MonoBehaviour
     // if proximity gone too long, restart scene
     if (Time.time >= lastProximity + TutorialManager.PROXIMITY_SENSOR_TIMEOUT)
     {
-      Debug.Log("User left VR. Restarting...");
-      ReloadScene();
+      //Debug.Log("User left VR. Restarting...");
+      //ReloadScene();
     }
   }
 
